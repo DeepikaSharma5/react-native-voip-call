@@ -1,6 +1,8 @@
 
 # react-native-voip-call
 
+Credits goes to https://github.com/ajith-ab/react-native-voip-call. Creating this repo to make the package support Android 12
+
 ## Getting started
 ### Npm
 ```bash
