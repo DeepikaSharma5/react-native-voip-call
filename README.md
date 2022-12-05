@@ -1,4 +1,4 @@
-# react-native-voip-call
+# react-native-voips-call
 
 Credits goes to https://github.com/ajith-ab/react-native-voip-call. Creating this repo to make the package support Android 12 as the original package is not supporting any updates.
 
@@ -7,18 +7,18 @@ Credits goes to https://github.com/ajith-ab/react-native-voip-call. Creating thi
 ### Npm
 
 ```bash
-$ npm install react-native-voip-calls --save
+$ npm install react-native-voips-calls --save
 ```
 
 ### Yarn
 
 ```bash
-$ yarn add react-native-voip-calls
+$ yarn add react-native-voips-calls
 ```
 
 ### Mostly automatic installation RN < 0.60.x
 
-`$ react-native link react-native-voip-calls`
+`$ react-native link react-native-voips-calls`
 
 ### ios Installation
 
@@ -38,7 +38,7 @@ Add `CallKit.framework` and `Intents.framework` (and mark it Optional).
 #### `import this package as your needed places`
 
 ```javascript
-import RNVoipCall from "react-native-voip-calls";
+import RNVoipCall from "react-native-voips-calls";
 ```
 
 ### 1. initialize Call (IOS Required)
