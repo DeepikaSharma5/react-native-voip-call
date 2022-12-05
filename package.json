@@ -1,5 +1,5 @@
 {
-  "name": "react-native-voip-call",
+  "name": "react-native-voip-calls",
   "version": "1.1.1",
   "description": "webrtc background supported call notifications",
   "main": "index.js",
@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ajith-ab/react-native-voip-call.git"
+    "url": "git+https://github.com/DeepikaSharma5/react-native-voip-call.git"
   },
-  "author": "Ajith A B",
+  "author": "Ajith A B && Deepika Sharma",
   "maintainers": [
     "See AUTHORS file"
   ],
@@ -19,9 +19,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/react-native-webrtc/react-native-voip-call/issues"
+    "url": "https://github.com/DeepikaSharma5/react-native-voip-call/issues"
   },
-  "homepage": "https://github.com/ajith-ab/react-native-voip-call/blob/master/README.md",
+  "homepage": "https://github.com/DeepikaSharma5/react-native-voip-call/blob/master/README.md",
   "keywords": [
     "react-native",
     "android",
