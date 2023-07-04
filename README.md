@@ -58,7 +58,7 @@ import RNVoipCall from "react-native-voips-calls";
 
 ```
 
-### 2. display Incomming Call
+### 2. display Incoming Call
 
 ```javascript
 let callOptions = {
@@ -69,13 +69,13 @@ let callOptions = {
     hasVideo: true,
   },
   android: {
-    ringtuneSound: true, // defualt true
+    ringtuneSound: true, // default true
     ringtune: "ringtune", // add file inside Project_folder/android/app/res/raw
-    duration: 20000, // defualt 30000
-    vibration: true, // defualt is true
+    duration: 20000, // default 30000
+    vibration: true, // default is true
     channel_name: "call1asd", //
     notificationId: 1121,
-    notificationTitle: "Incomming Call",
+    notificationTitle: "Incoming Call",
     notificationBody: "Some One is Calling...",
     answerActionTitle: "Answer",
     declineActionTitle: "Decline",
@@ -156,20 +156,12 @@ RNVoipCall.getInitialNotificationActions()
 ### 9. Event Listener (Android only)
 
 ```javascript
-
-    //app open Automatically when Call recived
-    RNVoipCall.onCallOpenAppEvent(event => {
-
-    });
-    // on click call Notification
-    RNVoipCall.onCallNotificationOpen(event => {
-
-    });
-    missed call notification taped
-    RNVoipCall.onMissedCallOpen(event => {
-
-    });
-
+//app open Automatically when Call recived
+RNVoipCall.onCallOpenAppEvent((event) => {});
+// on click call Notification
+RNVoipCall.onCallNotificationOpen((event) => {});
+// missed call notification taped
+RNVoipCall.onMissedCallOpen((event) => {});
 ```
 
 ### 10. Play and stop ringtune (Android only)
@@ -300,57 +292,48 @@ RNVoipCall.stopRingtune();
 5. `IosPushKitHandler.js`
 
 ```javascript
-import React, {useEffect, useState } from 'react';
-import {
-  View,
-  Text,
-  Platform,
-  Button
-} from 'react-native';
-import RNVoipCall, { RNVoipPushKit } from 'react-native-voip-call';
+import React, { useEffect, useState } from "react";
+import { View, Text, Platform, Button } from "react-native";
+import RNVoipCall, { RNVoipPushKit } from "react-native-voip-call";
 
-const IsIos = Platform.OS === 'ios';
+const IsIos = Platform.OS === "ios";
 
-const log = (data) => console.log('RNVoipCall===> ',data);
+const log = (data) => console.log("RNVoipCall===> ", data);
 
 const IosPushKitHandler = () => {
-   const [pushkitToken, setPushkitToken] = useState('');
+  const [pushkitToken, setPushkitToken] = useState("");
 
-   useEffect(()=>{
+  useEffect(() => {
     iosPushKit();
-  },[])
+  }, []);
 
-   const iosPushKit = () => {
-    if(IsIos){
+  const iosPushKit = () => {
+    if (IsIos) {
       //For Push Kit
-      RNVoipPushKit.requestPermissions();  // --- optional, you can use another library to request permissions
+      RNVoipPushKit.requestPermissions(); // --- optional, you can use another library to request permissions
 
-       //Ios PushKit device token Listner
+      //Ios PushKit device token Listener
       RNVoipPushKit.getPushKitDeviceToken((res) => {
-        if(res.platform === 'ios'){
-            setPushkitToken(res.deviceToken)
+        if (res.platform === "ios") {
+          setPushkitToken(res.deviceToken);
         }
-       });
+      });
 
-       //On Remote Push notification Recived in Forground
-       RNVoipPushKit.RemotePushKitNotificationReceived((notification)=>{
-           log(notification);
-       });
+      //On Remote Push notification Received in Forground
+      RNVoipPushKit.RemotePushKitNotificationReceived((notification) => {
+        log(notification);
+      });
     }
-  }
+  };
 
-    return (
-      <View>
-        <Text>
-          {"push kit token:" + pushkitToken}
-        </Text>
-      </View>
+  return (
+    <View>
+      <Text>{"push kit token:" + pushkitToken}</Text>
+    </View>
   );
 };
 
-}
 export default IosPushKitHandler;
-
 ```
 
 6. Create pem file for push please Refer [generate Cretificate](https://support.qiscus.com/hc/en-us/articles/360023340734-How-to-Create-Certificate-pem-for-Pushkit-) , [convert p12 to pem](https://stackoverflow.com/questions/40720524/how-to-send-push-notifications-to-test-ios-pushkit-integration-online)
@@ -400,13 +383,13 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
           hasVideo: true,
         },
         android: {
-          ringtuneSound: true, // defualt true
+          ringtuneSound: true, // default true
           ringtune: "ringtune", // add file inside Project_folder/android/app/res/raw --Formats--> mp3,wav
-          duration: 30000, // defualt 30000
-          vibration: true, // defualt is true
+          duration: 30000, // default 30000
+          vibration: true, // default is true
           channel_name: "call", //
           notificationId: 1123,
-          notificationTitle: "Incomming Call",
+          notificationTitle: "Incoming Call",
           notificationBody: data.name + " is Calling...",
           answerActionTitle: "Answer",
           declineActionTitle: "Decline",
@@ -444,11 +427,11 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
 | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img height="500" src="https://raw.githubusercontent.com/ajith-ab/react-native-voip-call/master/doc/ios1.jpeg" style="max-width:100%;"> | <img height="500" src="https://raw.githubusercontent.com/ajith-ab/react-native-voip-call/master/doc/android-1.jpeg" style="max-width:100%;"> | <img height="500" src="https://raw.githubusercontent.com/ajith-ab/react-native-voip-call/master/doc/android-2.jpeg" style="max-width:100%;"> |
 
-
 ### Author
 
-[Ajith A B](https://www.linkedin.com/in/ajith-a-b-a61303197)
 [Deepika Srinivasan](https://www.linkedin.com/in/deepika-srinivasan-032693114/)
+
+[Ajith A B](https://www.linkedin.com/in/ajith-a-b-a61303197)
 
 ### licenses
 
