@@ -1,7 +1,5 @@
 # react-native-voips-call
 
-Initial credits goes to https://github.com/ajith-ab/react-native-voip-call. Creating this repo to make the package support Android 12 as the original package is not supporting any updates.
-
 ## Getting started
 
 ### Npm
@@ -100,6 +98,8 @@ RNVoipCall.endAllCalls(); // End All Calls
 
 ```javascript
 RNVoipCall.onCallAnswer((data) => {
+  //Remove endCall listener when a call is coming
+  RNVoipCall.onRemoveEndCallListener();
   console.log(data);
 });
 ```
@@ -436,3 +436,5 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
 ### licenses
 
 MIT
+
+Initial credits goes to https://github.com/ajith-ab/react-native-voip-call. Created this package to support new releases as the original package is not supporting any updates.
